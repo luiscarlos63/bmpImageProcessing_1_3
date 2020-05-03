@@ -21,7 +21,7 @@ using namespace std;
 int main(int wqfewf, char fefref)
 {
 	int ola;
-	
+	int adeus;
 
 
 	return 0;
