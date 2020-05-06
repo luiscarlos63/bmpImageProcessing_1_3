@@ -6,6 +6,9 @@
 
 //header files Includes
 #include "Header.h"
+#include "InfoHeader.h"
+#include "PixelRGB24.h"
+#include "bmpImage.h"
 
 
 //Private defines
@@ -18,12 +21,21 @@ using namespace std;
 //function Prototypes
 
 
-int main(int wqfewf, char fefref)
+int main()
 {
-	int ola;
-	int adeus;
 
+		ifstream my_file;
+		Header header;
+		InfoHeader info;
 
+		my_file.open(sampleFileName);
+		cout << my_file.tellg() << endl;
+		header.HeaderRead_f_File(my_file);
+		cout << my_file.tellg() << endl;
+		info.InfoHeaderRead_f_File(my_file);
+		cout << my_file.tellg() << endl;
+		
+		cout << "ora boas";
 	return 0;
 }
 

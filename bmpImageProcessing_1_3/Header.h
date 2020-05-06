@@ -1,6 +1,14 @@
 #pragma once
 
+//lib includes
+#include <iostream>
 #include <stdint.h>
+#include <fstream>
+
+//my header includes
+
+using namespace std;
+//class Header
 
 class Header
 {
@@ -10,7 +18,8 @@ public:
 	~Header();
 
 	//metodos publicos
-
+	bool HeaderRead_f_File(ifstream& file);
+	uint32_t get_DataOffset() { return this->DataOffset; }
 
 
 private:

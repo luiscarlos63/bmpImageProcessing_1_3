@@ -1,13 +1,35 @@
 #pragma once
 
+//lib includes
+#include <iostream>
 #include <stdint.h>
+#include <fstream>
+
+//my header includes
 
 
+//my defines
+#define RSETVALUE 0
+#define INFOHRDIOFFSET 0x000E
+#define	NINFODATA 0xcccc	
 
+using namespace std;
+//class InfoHeader
 class InfoHeader
 {
 public:
+	InfoHeader();
+	InfoHeader(const InfoHeader&);
+
+	//metodos publicos
+	bool InfoHeaderRead_f_File(ifstream& file);
 	
+	//gets
+	uint32_t get_ImageSize() { return this->ImageSize; }
+	uint16_t get_bitsPpixel() { return this->bitsPpixel; }
+
+	//sets
+
 
 private:
 	uint32_t size;
@@ -16,11 +38,10 @@ private:
 	uint16_t planes;
 	uint16_t bitsPpixel;
 	uint32_t compression;
+	uint32_t ImageSize;
 	uint32_t XpixelsPerM;
 	uint32_t YpixelsPerM;
 	uint32_t colorsUsed;
 	uint32_t ImportantColors;
-
-//	uint32_t ColorTable;	//ainda nao tenho certeza como lidar com isto
 };
 

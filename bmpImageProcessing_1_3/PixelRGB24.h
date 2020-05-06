@@ -13,10 +13,11 @@ class PixelRGB24
 	void setPixel(const PixelRGB24& );
 
 	//
+	
 
 private:
-	uint8_t Red;
-	uint8_t Green;
 	uint8_t Blue;
+	uint8_t Green;
+	uint8_t Red;
 };
 
